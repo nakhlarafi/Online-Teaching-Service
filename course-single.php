@@ -111,28 +111,28 @@
           $result = $conn->query($sql);
           
           if ($result->num_rows > 0){
-						while($row = $result->fetch_assoc()){
+			while($row = $result->fetch_assoc()){
+				//echo "<p>".$row["course_name"]."</p>";	
+              echo '<div class="mb-5">';
+                echo "<p>".$row["course_name"]."</p>";
+                 echo '<p class="mb-4">';
+                  echo '<strong class="text-black mr-3">Schedule: </strong> 9:30 - 11:00(Sunday and Tuesday)';
+                echo '</p>';
+                echo "<p>".$row["course_description"]."</p>";
+                echo '<div class="row mb-4">';
+                  echo '<div class="col md-6">';
+                    echo '<img src="images/img_1.jpg" alt="Image" class="img-fluid rounded">';
+                  echo '</div>';
+                  echo '<div class="col md-6">';
+                    echo '<img src="images/img_2.jpg" alt="Image" class="img-fluid rounded">';
+                  echo '</div>';
+                echo '</div>';
+                echo '<p data-aos="fade-up" data-aos-delay="300"><a href="index.html"';
+                  echo 'class="btn btn-primary py-3 px-5 btn-pill">Apply</a></p>';
+              echo '</div>';
 						
-              <div class="mb-5">
-                echo "<tr><td>".$row["course_name"];
-                <p class="mb-4">
-                  <strong class="text-black mr-3">Schedule: </strong> 9:30 - 11:00(Sunday and Tuesday)
-                </p>
-                <p>$row["course_description"]</p>
-                <div class="row mb-4">
-                  <div class="col-md-6">
-                    <img src="images/img_1.jpg" alt="Image" class="img-fluid rounded">
-                  </div>
-                  <div class="col-md-6">
-                    <img src="images/img_2.jpg" alt="Image" class="img-fluid rounded">
-                  </div>
-                </div>
-                <p data-aos="fade-up" data-aos-delay="300"><a href="index.html"
-                  class="btn btn-primary py-3 px-5 btn-pill">Apply</a></p>
-              </div>;
-						
-						}
-					}
+			}
+		}
 					else {
 						echo "0 results";
 					}
