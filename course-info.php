@@ -126,19 +126,56 @@
               <p class="mb-4">
                 <strong class="text-black mr-3">Schedule: </strong> MWF 9:30 - 11:00
               </p>
-              <p>No matter which programming language you program in, if you want to be able to build scalable systems, it is important to learn data structures and algorithms.
 
-                Our tutorials on Data structure and algorithms or DSA in short, teach all the basic concepts with examples and code in C, C++, Java and Python.</p>
-              <div class="row mb-4">
-                <div class="col-md-6">
-                  <img src="images/img_1.jpg" alt="Image" class="img-fluid rounded">
-                </div>
-                <div class="col-md-6">
-                  <img src="images/img_2.jpg" alt="Image" class="img-fluid rounded">
-                </div>
-              </div>
-              <p class="mt-4"><a href="#" class="btn btn-primary">Admission</a></p>
-            </div>
+
+              <?php
+            //session_start();
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "tutolage";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+            }
+            //$course_id = $_SESSION['course_id'];
+            //$course_id = $_GET['course'];
+            $fee = 0;
+            $course_instructor = "";
+            $sql = "SELECT course_name, fee, instructor,course_description FROM courses WHERE course_id='$course_id'";
+					$result = $conn->query($sql);
+					
+					if ($result->num_rows > 0){
+						while($row = $result->fetch_assoc()){
+              $course_instructor = $row["instructor"];
+              $fee = $row["fee"];
+              echo '<p>'.$row["course_description"].'</p>';
+              echo '<div class="row mb-4">';
+              echo '<div class="col-md-6">';
+              echo '<img src="images/img_1.jpg" alt="Image" class="img-fluid rounded">';
+              echo '</div>';
+              echo '<div class="col-md-6">';
+              echo '<img src="images/img_2.jpg" alt="Image" class="img-fluid rounded">';
+              echo '</div>';
+              echo '</div>';
+              echo '<p class="mt-4"><a href="#" class="btn btn-primary">Admission</a></p>';
+              echo '</div>';
+              
+						}
+					}
+					else {
+						echo "0 results";
+					}
+        
+            
+            $conn->close();
+            ?>
+    
+
+
 
             <div class="pt-5">
               <h3 class="mb-5">6 Comments</h3>
@@ -261,7 +298,7 @@
               <h3 class="mb-5 text-black text-uppercase h6 border-bottom pb-3">Course Instructor</h3>
               <div class="mb-4 text-center">
                 <img src="images/person_2.jpg" alt="Image" class="w-25 rounded-circle mb-4">  
-                <h3 class="h5 text-black mb-4">Christine Downeyy</h3>
+                <h3 class="h5 text-black mb-4"><?php echo $course_instructor ?></h3>
                 <p>Lorem ipsum dolor sit amet sectetur adipisicing elit. Ipsa porro expedita libero pariatur vero eos.</p>
               </div>
             </div>
