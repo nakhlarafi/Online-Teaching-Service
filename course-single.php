@@ -91,7 +91,6 @@
         </div>
       </div>
     </div>
-
     <div class="site-section">
       <div class="container">
         <div class="row">
@@ -226,7 +225,6 @@
                 </li>
               </ul>
               <!-- END comment-list -->
-
               <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">Leave a comment</h3>
                 <form action="#" class="p-5 bg-light">
