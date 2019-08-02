@@ -85,8 +85,9 @@
             if ($conn->connect_error) {
               die("Connection failed: " . $conn->connect_error);
             }
-            $course_id = $_SESSION['course_id'];
-            
+            //$course_id = $_SESSION['course_id'];
+            $course_id = $_GET['course'];
+            //echo $course_id;
 
         echo  '<div class="slide-1 "';
          echo 'data-stellar-background-ratio="0.5">';

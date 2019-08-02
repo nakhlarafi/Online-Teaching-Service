@@ -129,8 +129,8 @@
                 echo '<img src="images/img_2.jpg" alt="Image" class="img-fluid rounded">';
                 echo '</div>';
                 echo '</div>';
-                echo '<p data-aos="fade-up" data-aos-delay="300"><a href="course-info.php"';
-
+                //echo '<p data-aos="fade-up" data-aos-delay="300"><a href="course-info.php"';
+                echo '<p data-aos="fade-up" data-aos-delay="300"><a href="course-info.php?course='.$row['course_id'].'"$course" ';
                 echo 'class="btn btn-primary py-3 px-5 btn-pill">Apply</a></p>';
                 echo '</div>';
               }
