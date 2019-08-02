@@ -72,75 +72,73 @@
 
     <div class="intro-section single-cover" id="home-section">
       
-      <div class="slide-1 " style="background-image: url('images/img_2.jpg');" data-stellar-background-ratio="0.5">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-12">
-              <div class="row justify-content-center align-items-center text-center">
-                <div class="col-lg-6">
-                  
-                </div>
+    <?php
+            session_start();
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "tutolage";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+            }
+            $course_id = $_SESSION['course_id'];
+            
+
+        echo  '<div class="slide-1 "';
+         echo 'data-stellar-background-ratio="0.5">';
+          echo '<div class="container">';
+          echo '<div class="row align-items-center">';
+            echo '<div class="col-12">';
+              echo '<div class="row justify-content-center align-items-center text-center">';
+                echo '<div class="col-lg-6">';
+                echo "<h1>" . $course_id . "</h1>";
+                echo '<p data-aos="fade-up" data-aos-delay="100">4 Lessons / 12 Week &bullet; 2,193 students &bullet; <a href="#" class="text-white">6 comments</a></p>';
+                echo '</div>';
 
                 
-              </div>
-            </div>
+             echo '</div>';
+             echo '</div>';
             
-          </div>
-        </div>
-      </div>
-    </div>
+             echo '</div>';
+             echo '</div>';
+             echo '</div>';
+             echo '</div>';
+            
+            $conn->close();
+            ?>
+    
+    
+    
+    
     
     <div class="site-section">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mb-5">
-          <?php
-          session_start();
-					$servername = "localhost";
-					$username = "root";
-					$password = "";
-					$dbname = "tutolage";
 
-					// Create connection
-					$conn = new mysqli($servername, $username, $password, $dbname);
-					// Check connection
-					if ($conn->connect_error) {
-						die("Connection failed: " . $conn->connect_error);
-					}
-          $sql = "SELECT course_name, course_id, fee, instructor, course_description FROM courses WHERE 1";
-          $result = $conn->query($sql);
-          
-          if ($result->num_rows > 0){
-						while($row = $result->fetch_assoc()){
-						
-              <div class="mb-5">
-                echo "<tr><td>".$row["course_name"];
-                <p class="mb-4">
-                  <strong class="text-black mr-3">Schedule: </strong> 9:30 - 11:00(Sunday and Tuesday)
-                </p>
-                <p>$row["course_description"]</p>
-                <div class="row mb-4">
-                  <div class="col-md-6">
-                    <img src="images/img_1.jpg" alt="Image" class="img-fluid rounded">
-                  </div>
-                  <div class="col-md-6">
-                    <img src="images/img_2.jpg" alt="Image" class="img-fluid rounded">
-                  </div>
+            <div class="mb-5">
+              <h3 class="text-black">Course Description</h3>
+              <p class="mb-4">
+                <strong class="text-black mr-3">Schedule: </strong> MWF 9:30 - 11:00
+              </p>
+              <p>No matter which programming language you program in, if you want to be able to build scalable systems, it is important to learn data structures and algorithms.
+
+                Our tutorials on Data structure and algorithms or DSA in short, teach all the basic concepts with examples and code in C, C++, Java and Python.</p>
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <img src="images/img_1.jpg" alt="Image" class="img-fluid rounded">
                 </div>
-                <p data-aos="fade-up" data-aos-delay="300"><a href="index.html"
-                  class="btn btn-primary py-3 px-5 btn-pill">Apply</a></p>
-              </div>;
-						
-						}
-					}
-					else {
-						echo "0 results";
-					}
-          $conn->close();
-				?>
+                <div class="col-md-6">
+                  <img src="images/img_2.jpg" alt="Image" class="img-fluid rounded">
+                </div>
+              </div>
+              <p class="mt-4"><a href="#" class="btn btn-primary">Admission</a></p>
+            </div>
 
-           
-            
             <div class="pt-5">
               <h3 class="mb-5">6 Comments</h3>
               <ul class="comment-list">
@@ -266,15 +264,6 @@
                 <p>Lorem ipsum dolor sit amet sectetur adipisicing elit. Ipsa porro expedita libero pariatur vero eos.</p>
               </div>
             </div>
-            <div>
-            <div class="mb-5 text-center border rounded course-instructor">
-              <h3 class="mb-5 text-black text-uppercase h6 border-bottom pb-3">Benjamin Stone</h3>
-              <div class="mb-4 text-center">
-                <img src="images/person_1.jpg" alt="Image" class="w-25 rounded-circle mb-4">  
-                <h3 class="h5 text-black mb-4">Benjamin Stone</h3>
-                <p>He is the best JS code instructor you can find!</p>
-              </div>
-            </div>
 
           </div>
         </div>
@@ -304,7 +293,7 @@
                 <span class="course-price">$20</span>
                 <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>
                 <h3><a href="#">Study Law of Physics</a></h3>
-                <p>Apply to Learn using the most advanced and easiest way. </p>
+                <p>Lorem ipsum dolor sit amet ipsa nulla adipisicing elit. </p>
               </div>
               <div class="d-flex border-top stats">
                 <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
@@ -320,7 +309,7 @@
                 <span class="course-price">$99</span>
                 <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>
                 <h3><a href="#">Logo Design Course</a></h3>
-                <p>Apply to Learn using the most advanced and easiest way. </p>
+                <p>Lorem ipsum dolor sit amet ipsa nulla adipisicing elit. </p>
               </div>
               <div class="d-flex border-top stats">
                 <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
@@ -336,7 +325,7 @@
                 <span class="course-price">$99</span>
                 <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>
                 <h3><a href="#">JS Programming Language</a></h3>
-                <p>Apply to Learn using the most advanced and easiest way.</p>
+                <p>Lorem ipsum dolor sit amet ipsa nulla adipisicing elit. </p>
               </div>
               <div class="d-flex border-top stats">
                 <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
@@ -354,7 +343,7 @@
                 <span class="course-price">$20</span>
                 <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>
                 <h3><a href="#">Study Law of Physics</a></h3>
-                <p>Apply to Learn using the most advanced and easiest way. </p>
+                <p>Lorem ipsum dolor sit amet ipsa nulla adipisicing elit. </p>
               </div>
               <div class="d-flex border-top stats">
                 <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
@@ -370,7 +359,7 @@
                 <span class="course-price">$99</span>
                 <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>
                 <h3><a href="#">Logo Design Course</a></h3>
-                <p>Apply to Learn using the most advanced and easiest way. </p>
+                <p>Lorem ipsum dolor sit amet ipsa nulla adipisicing elit. </p>
               </div>
               <div class="d-flex border-top stats">
                 <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
@@ -386,7 +375,7 @@
                 <span class="course-price">$99</span>
                 <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>
                 <h3><a href="#">JS Programming Language</a></h3>
-                <p>Apply to Learn using the most advanced and easiest way. </p>
+                <p>Lorem ipsum dolor sit amet ipsa nulla adipisicing elit. </p>
               </div>
               <div class="d-flex border-top stats">
                 <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
