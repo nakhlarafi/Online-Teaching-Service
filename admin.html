@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Tutolage &mdash;</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    
-   
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+<head>
+  <title>Tutolage &mdash;</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
 
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
-    
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-  
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
   <div class="site-wrap">
 
     <div class="site-mobile-menu site-navbar-target">
@@ -38,10 +40,10 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div>
-   
-    
+
+
     <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
-      
+
       <div class="container-fluid">
         <div class="d-flex align-items-center">
           <div class="site-logo mr-auto w-25"><a href="index.html">Tutolage</a></div>
@@ -63,120 +65,122 @@
                 <li class="cta"><a href="#contact-section" class="nav-link"><span>Contact Us</span></a></li>
               </ul>
             </nav>
-            <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
+            <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span
+                class="icon-menu h3"></span></a>
           </div>
         </div>
       </div>
-      
+
     </header>
 
     <div class="intro-section single-cover" id="home-section">
-      
+
       <div class="slide-1 " style="background-image: url('images/img_2.jpg');" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-12">
               <div class="row justify-content-center align-items-center text-center">
                 <div class="col-lg-6">
-                  <h1 data-aos="fade-up" data-aos-delay="0">Admin panel</h1>
-                 
+                  <h1 data-aos="fade-up" data-aos-delay="0">Add Course</h1>
+
                 </div>
 
-                
+
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>
     </div>
+
     
     <div class="site-section">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mb-5">
-              <div class="comment-form-wrap pt-5">
-                <h3 class="mb-5">Create Course</h3>
-                <form action="#" class="p-5 bg-light">
-                  <div class="form-group">
-                    <label for="courses-title">Course Name</label>
-                    <input type="text" class="form-control" id="courses-title">
-                  </div>
-                  <div class="form-group">
-                    <label for="courses-title">Course ID</label>
-                    <input type="text" class="form-control" id="courses-title">
-                  </div>
-                  <div class="form-group">
-                    <label for="course-price">Fee</label>
-                    <input type="number" class="form-control" id="course-price">
-                  </div>
-                  <div class="form-group">
-                    <label for="Instructor">Instructor</label>
-                    <input type="text" class="form-control" id="Instructor">
-                  </div>
+            <div class="comment-form-wrap pt-5">
+             <form action="addCourse.php" class="p-5 bg-light" method="POST">
+              <h3 class="mb-5">Create Course</h3>
+              
+                <div class="form-group">
+                  <label for="courses-title">Course Name</label>
+                  <input type="text" class="form-control" name="course_title">
+                </div>
+                <div class="form-group">
+                  <label for="courses-title">Course ID</label>
+                  <input type="text" class="form-control" name="course_id">
+                </div>
+                <div class="form-group">
+                  <label for="course-price">Fee</label>
+                  <input type="number" class="form-control" name="course_price">
+                </div>
+                <div class="form-group">
+                  <label for="Instructor">Instructor</label>
+                  <input type="text" class="form-control" name="Instructor">
+                </div>
 
-                  <div class="form-group">
-                    <label for="message">Course Description</label>
-                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary">
-                  </div>
+                <div class="form-group">
+                  <label for="message">Course Description</label>
+                  <input type="text" class="form-control" name="course_description">
+                </div>
 
-                </form>
-              </div>
+                <div class="form-group">
+                  <input type="submit" value="Create" class="btn btn-primary">
+                </div>
+
+              </form>
             </div>
           </div>
+        </div>
+      </div>
+  </div>
+  
+
+  <footer class="footer-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>About Tutolage</h3>
+          <p>Best interactive approach of education you may ever see! </p>
+        </div>
+
+        <div class="col-md-3 ml-auto">
+          <h3>Links</h3>
+          <ul class="list-unstyled footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Programs</a></li>
+            <li><a href="#">Teachers</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+          <h3>Sayonara</h3>
+          <p></p>
+
+        </div>
+
+      </div>
+
+      <div class="row pt-5 mt-5 text-center">
+        <div class="col-md-12">
+          <div class="border-top pt-5">
+            <p>
+
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> Tutolage
+
+            </p>
           </div>
         </div>
+
       </div>
     </div>
+  </footer>
 
-     
-    <footer class="footer-section bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h3>About Tutolage</h3>
-            <p>Best interactive approach of education you may ever see! </p>
-          </div>
 
-          <div class="col-md-3 ml-auto">
-            <h3>Links</h3>
-            <ul class="list-unstyled footer-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Courses</a></li>
-              <li><a href="#">Programs</a></li>
-              <li><a href="#">Teachers</a></li>
-            </ul>
-          </div>
 
-          <div class="col-md-4">
-            <h3>Sayonara</h3>
-            <p></p>
-            
-          </div>
-
-        </div>
-
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-              <p>
-                
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> Tutolage
-               
-              </p>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </footer>
-
-  
-    
   </div> <!-- .site-wrap -->
 
   <script src="js/jquery-3.3.1.min.js"></script>
@@ -193,8 +197,9 @@
   <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/jquery.sticky.js"></script>
 
-  
+
   <script src="js/main.js"></script>
-    
-  </body>
+
+</body>
+
 </html>

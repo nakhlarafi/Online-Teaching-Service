@@ -51,10 +51,9 @@
           <div class="mx-auto text-center">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
-                <li><a href="#home-section" class="nav-link">Home</a></li>
-                <li><a href="#courses-section" class="nav-link">Courses</a></li>
-                <li><a href="#programs-section" class="nav-link">Programs</a></li>
-                <li><a href="#teachers-section" class="nav-link">Teachers</a></li>
+                <li><a href="course-single.php" class="nav-link">Home</a></li>
+                <li><a href="myCourse.php" class="nav-link">My Courses</a></li>
+                
               </ul>
             </nav>
           </div>
@@ -62,7 +61,7 @@
           <div class="ml-auto w-25">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
-                <li class="cta"><a href="#contact-section" class="nav-link"><span>Create Course</span></a></li>
+                <li class="cta"><a href="admin.html" class="nav-link"><span>Create Course</span></a></li>
               </ul>
             </nav>
             
@@ -84,7 +83,7 @@
             <div class="col-12">
               <div class="row justify-content-center align-items-center text-center">
                 <div class="col-lg-6">
-
+                  <h1> Courses </h1>
                 </div>
 
 
@@ -112,7 +111,7 @@
             if ($conn->connect_error) {
               die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "SELECT course_name, course_id, fee, instructor, course_description FROM courses WHERE 1";
+            $sql = "SELECT course_name, course_id, fee, instructor, course_description FROM courses WHERE Approved=1";
             $result = $conn->query($sql);
             $username = $_SESSION['username']; 
             if ($result->num_rows > 0) {
@@ -146,277 +145,12 @@
 
 
 
-            <div class="pt-5">
-              <h3 class="mb-5">6 Comments</h3>
-              <ul class="comment-list">
-                <li class="comment">
-                  <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>Jean Doe</h3>
-                    <div class="meta">January 9, 2018 at 2:21pm</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                    <p><a href="#" class="reply">Reply</a></p>
-                  </div>
-                </li>
-
-                <li class="comment">
-                  <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>Jean Doe</h3>
-                    <div class="meta">January 9, 2018 at 2:21pm</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                    <p><a href="#" class="reply">Reply</a></p>
-                  </div>
-
-                  <ul class="children">
-                    <li class="comment">
-                      <div class="vcard bio">
-                        <img src="images/person_1.jpg" alt="Image placeholder">
-                      </div>
-                      <div class="comment-body">
-                        <h3>Jean Doe</h3>
-                        <div class="meta">January 9, 2018 at 2:21pm</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                        <p><a href="#" class="reply">Reply</a></p>
-                      </div>
-
-
-                      <ul class="children">
-                        <li class="comment">
-                          <div class="vcard bio">
-                            <img src="images/person_1.jpg" alt="Image placeholder">
-                          </div>
-                          <div class="comment-body">
-                            <h3>Jean Doe</h3>
-                            <div class="meta">January 9, 2018 at 2:21pm</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                            <p><a href="#" class="reply">Reply</a></p>
-                          </div>
-
-                          <ul class="children">
-                            <li class="comment">
-                              <div class="vcard bio">
-                                <img src="images/person_1.jpg" alt="Image placeholder">
-                              </div>
-                              <div class="comment-body">
-                                <h3>Jean Doe</h3>
-                                <div class="meta">January 9, 2018 at 2:21pm</div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                                <p><a href="#" class="reply">Reply</a></p>
-                              </div>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="comment">
-                  <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>Jean Doe</h3>
-                    <div class="meta">January 9, 2018 at 2:21pm</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                    <p><a href="#" class="reply">Reply</a></p>
-                  </div>
-                </li>
-              </ul>
-              <!-- END comment-list -->
-              <div class="comment-form-wrap pt-5">
-                <h3 class="mb-5">Leave a comment</h3>
-                <form action="#" class="p-5 bg-light">
-                  <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" class="form-control" id="name">
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" class="form-control" id="email">
-                  </div>
-                  <div class="form-group">
-                    <label for="website">Website</label>
-                    <input type="url" class="form-control" id="website">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <input type="submit" value="Post Comment" class="btn btn-primary">
-                  </div>
-
-                </form>
-              </div>
-            </div>
-
-
-
-          </div>
-          <div class="col-lg-4 pl-lg-5">
-
-            <div class="mb-5 text-center border rounded course-instructor">
-              <h3 class="mb-5 text-black text-uppercase h6 border-bottom pb-3">Course Instructor</h3>
-              <div class="mb-4 text-center">
-                <img src="images/person_2.jpg" alt="Image" class="w-25 rounded-circle mb-4">
-                <h3 class="h5 text-black mb-4">Christine Downeyy</h3>
-                <p>Lorem ipsum dolor sit amet sectetur adipisicing elit. Ipsa porro expedita libero pariatur vero eos.</p>
-              </div>
-            </div>
-            <div>
-              <div class="mb-5 text-center border rounded course-instructor">
-                <h3 class="mb-5 text-black text-uppercase h6 border-bottom pb-3">Benjamin Stone</h3>
-                <div class="mb-4 text-center">
-                  <img src="images/person_1.jpg" alt="Image" class="w-25 rounded-circle mb-4">
-                  <h3 class="h5 text-black mb-4">Benjamin Stone</h3>
-                  <p>He is the best JS code instructor you can find!</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="site-section courses-title bg-dark" id="courses-section">
-        <div class="container">
-          <div class="row mb-5 justify-content-center">
-            <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
-              <h2 class="section-title">More Courses</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="site-section courses-entry-wrap" data-aos="fade" data-aos-delay="100">
-        <div class="container">
-          <div class="row">
-
-            <div class="owl-carousel col-12 nonloop-block-14">
-
-              <div class="course bg-white h-100 align-self-stretch">
-                <figure class="m-0">
-                  <a href="course-single.html"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
-                </figure>
-                <div class="course-inner-text py-4 px-4">
-                  <span class="course-price">$20</span>
-                  <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>
-                  <h3><a href="#">Study Law of Physics</a></h3>
-                  <p>Apply to Learn using the most advanced and easiest way. </p>
-                </div>
-                <div class="d-flex border-top stats">
-                  <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
-                  <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>
-                </div>
-              </div>
-
-              <div class="course bg-white h-100 align-self-stretch">
-                <figure class="m-0">
-                  <a href="course-single.html"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-                </figure>
-                <div class="course-inner-text py-4 px-4">
-                  <span class="course-price">$99</span>
-                  <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>
-                  <h3><a href="#">Logo Design Course</a></h3>
-                  <p>Apply to Learn using the most advanced and easiest way. </p>
-                </div>
-                <div class="d-flex border-top stats">
-                  <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
-                  <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>
-                </div>
-              </div>
-
-              <div class="course bg-white h-100 align-self-stretch">
-                <figure class="m-0">
-                  <a href="course-single.html"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-                </figure>
-                <div class="course-inner-text py-4 px-4">
-                  <span class="course-price">$99</span>
-                  <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>
-                  <h3><a href="#">JS Programming Language</a></h3>
-                  <p>Apply to Learn using the most advanced and easiest way.</p>
-                </div>
-                <div class="d-flex border-top stats">
-                  <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
-                  <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>
-                </div>
-              </div>
-
-
-
-              <div class="course bg-white h-100 align-self-stretch">
-                <figure class="m-0">
-                  <a href="course-single.html"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
-                </figure>
-                <div class="course-inner-text py-4 px-4">
-                  <span class="course-price">$20</span>
-                  <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>
-                  <h3><a href="#">Study Law of Physics</a></h3>
-                  <p>Apply to Learn using the most advanced and easiest way. </p>
-                </div>
-                <div class="d-flex border-top stats">
-                  <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
-                  <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>
-                </div>
-              </div>
-
-              <div class="course bg-white h-100 align-self-stretch">
-                <figure class="m-0">
-                  <a href="course-single.html"><img src="images/img_5.jpg" alt="Image" class="img-fluid"></a>
-                </figure>
-                <div class="course-inner-text py-4 px-4">
-                  <span class="course-price">$99</span>
-                  <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>
-                  <h3><a href="#">Logo Design Course</a></h3>
-                  <p>Apply to Learn using the most advanced and easiest way. </p>
-                </div>
-                <div class="d-flex border-top stats">
-                  <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
-                  <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>
-                </div>
-              </div>
-
-              <div class="course bg-white h-100 align-self-stretch">
-                <figure class="m-0">
-                  <a href="course-single.html"><img src="images/img_6.jpg" alt="Image" class="img-fluid"></a>
-                </figure>
-                <div class="course-inner-text py-4 px-4">
-                  <span class="course-price">$99</span>
-                  <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>
-                  <h3><a href="#">JS Programming Language</a></h3>
-                  <p>Apply to Learn using the most advanced and easiest way. </p>
-                </div>
-                <div class="d-flex border-top stats">
-                  <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
-                  <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>
-                </div>
-              </div>
-
-            </div>
-
-
-
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-7 text-center">
-              <button class="customPrevBtn btn btn-primary m-1">Prev</button>
-              <button class="customNextBtn btn btn-primary m-1">Next</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+            
       <footer class="footer-section bg-light">
         <div class="container">
           <div class="row">
             <div class="col-md-4">
-              <h3>About OneSchool</h3>
+              <h3>About Tutolage</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro consectetur ut hic ipsum et veritatis corrupti. Itaque eius soluta optio dolorum temporibus in, atque, quos fugit sunt sit quaerat dicta.</p>
             </div>
 

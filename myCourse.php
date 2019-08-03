@@ -51,25 +51,21 @@
           <div class="mx-auto text-center">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
-                <li><a href="#home-section" class="nav-link">Home</a></li>
-                <li><a href="#courses-section" class="nav-link">Courses</a></li>
-                <li><a href="#programs-section" class="nav-link">Programs</a></li>
-                <li><a href="#teachers-section" class="nav-link">Teachers</a></li>
+                <li><a href="course-single.php" class="nav-link">Home</a></li>
+                <li><a href="myCourse.php" class="nav-link">My Courses</a></li>
+                
               </ul>
             </nav>
           </div>
-            
-            <nav class="site-navigation position-relative text-right" role="navigation">
-              <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
-                <li class="cta"><a href="admin.html" class="nav-link"><span>Create Course</span></a></li>
-              </ul>
-            </nav>
 
+          <div class="ml-auto w-25">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
-                <li class="cta"><a href="Approve.php" class="nav-link"><span>Approve Course</span></a></li>
+                <li class="cta"><a href="#contact-section" class="nav-link"><span>Create Course</span></a></li>
               </ul>
             </nav>
+            
+            
             
             
             <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
@@ -87,7 +83,7 @@
             <div class="col-12">
               <div class="row justify-content-center align-items-center text-center">
                 <div class="col-lg-6">
-
+                    <h1> My Courses </h1>
                 </div>
 
 
@@ -108,16 +104,16 @@
             $username = "root";
             $password = "";
             $dbname = "tutolage";
-
+            $usernameU = $_SESSION['username']; 
             // Create connection
             $conn = new mysqli($servername, $username, $password, $dbname);
             // Check connection
             if ($conn->connect_error) {
               die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "SELECT course_name, course_id, fee, instructor, course_description FROM courses WHERE Approved=1";
+            $sql = "SELECT course_name, course_id, fee, instructor, course_description FROM courses WHERE course_id in (select CourseID from admissions  where username='$usernameU')";
             $result = $conn->query($sql);
-            $username = $_SESSION['username']; 
+            
             if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
                 //echo "<p>".$row["course_name"]."</p>";
@@ -150,8 +146,6 @@
 
 
             
-          
-     
       <footer class="footer-section bg-light">
         <div class="container">
           <div class="row">

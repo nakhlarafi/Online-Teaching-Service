@@ -94,53 +94,62 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mb-5">
-          <?php
-          session_start();
-					$servername = "localhost";
-					$username = "root";
-					$password = "";
-					$dbname = "tutolage";
 
-					// Create connection
-					$conn = new mysqli($servername, $username, $password, $dbname);
-					// Check connection
-					if ($conn->connect_error) {
-						die("Connection failed: " . $conn->connect_error);
-					}
-          $sql = "SELECT course_name, course_id, fee, instructor, course_description FROM courses WHERE 1";
-          $result = $conn->query($sql);
-          
-          if ($result->num_rows > 0){
-						while($row = $result->fetch_assoc()){
-						
-              <div class="mb-5">
-                echo "<tr><td>".$row["course_name"];
-                <p class="mb-4">
-                  <strong class="text-black mr-3">Schedule: </strong> 9:30 - 11:00(Sunday and Tuesday)
-                </p>
-                <p>$row["course_description"]</p>
-                <div class="row mb-4">
-                  <div class="col-md-6">
-                    <img src="images/img_1.jpg" alt="Image" class="img-fluid rounded">
-                  </div>
-                  <div class="col-md-6">
-                    <img src="images/img_2.jpg" alt="Image" class="img-fluid rounded">
-                  </div>
+            <div class="mb-5">
+              <h3 class="text-black">Database and Algorithm</h3>
+              <p class="mb-4">
+                <strong class="text-black mr-3">Schedule: </strong> 9:30 - 11:00(Sunday and Tuesday)
+              </p>
+              <p>No matter which programming language you program in, if you want to be able to build scalable systems, it is important to learn data structures and algorithms.
+
+                Our tutorials on Data structure and algorithms or DSA in short, teach all the basic concepts with examples and code in C, C++, Java and Python.</p>
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <img src="images/img_1.jpg" alt="Image" class="img-fluid rounded">
                 </div>
-                <p data-aos="fade-up" data-aos-delay="300"><a href="index.html"
-                  class="btn btn-primary py-3 px-5 btn-pill">Apply</a></p>
-              </div>;
-						
-						}
-					}
-					else {
-						echo "0 results";
-					}
-          $conn->close();
-				?>
+                <div class="col-md-6">
+                  <img src="images/img_2.jpg" alt="Image" class="img-fluid rounded">
+                </div>
+              </div>
+              <p data-aos="fade-up" data-aos-delay="300"><a href="index.html"
+                class="btn btn-primary py-3 px-5 btn-pill">Apply</a></p>
+            </div>
+            <div class="mb-5">
+              <h3 class="text-black">JS code</h3>
+              <p class="mb-4">
+                <strong class="text-black mr-3">Schedule: </strong> 11:00-5.00(Sunday and Tuesday)
+              </p>
+              <p>One programming language is similar to many programming language. If a language can be learnt then it is easy to gain knowledge of many programming languages.</p>
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <img src="images/img_1.jpg" alt="Image" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                  <img src="images/img_2.jpg" alt="Image" class="img-fluid rounded">
+                </div>
+              </div>
+              <p data-aos="fade-up" data-aos-delay="300"><a href="index.html"
+                class="btn btn-primary py-3 px-5 btn-pill">Apply</a></p>
+              
+            </div>
+            <div class="mb-5">
+              <h3 class="text-black">Circuit Analysis</h3>
+              <p class="mb-4">
+                <strong class="text-black mr-3">Schedule: </strong> 9:30 - 11:00(Monday and Wednesday)
+              </p>
+              <p>Student find circuit solving methods very hard. We have the very easy technique to solve them. All the methods are easily covered here.</p>
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <img src="images/img_1.jpg" alt="Image" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                  <img src="images/img_2.jpg" alt="Image" class="img-fluid rounded">
+                </div>
+              </div>
+              <p data-aos="fade-up" data-aos-delay="300"><a href="index.html"
+                class="btn btn-primary py-3 px-5 btn-pill">Apply</a></p>
+            </div>
 
-           
-            
             <div class="pt-5">
               <h3 class="mb-5">6 Comments</h3>
               <ul class="comment-list">
