@@ -13,12 +13,13 @@
 	
 	$_SESSION['username'] = $username;
 	
-	$sql="SELECT name FROM user WHERE username='$username' AND Password='$password'";
+	$sql="SELECT NAME,USERTYPE FROM user WHERE username='$username' AND Password='$password'";
 	$result= $connect->query($sql);
 	if($result-> num_rows> 0){
 		
 		while($row=$result->fetch_assoc()){
-            //echo "hoise";
+			//echo "hoise";
+			$_SESSION['usertype'] = $row["USERTYPE"];
 			header('Location:check.php');
 			//echo '<a href="check.php">page 2</a>';
 			//echo "<script> window.location.assign('mainSite/site/index.html'); </script>";

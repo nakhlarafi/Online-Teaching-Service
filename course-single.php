@@ -62,9 +62,13 @@
           <div class="ml-auto w-25">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
-                <li class="cta"><a href="#contact-section" class="nav-link"><span>Contact Us</span></a></li>
+                <li class="cta"><a href="#contact-section" class="nav-link"><span>Create Course</span></a></li>
               </ul>
             </nav>
+            
+            
+            
+            
             <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
           </div>
         </div>
@@ -110,7 +114,7 @@
             }
             $sql = "SELECT course_name, course_id, fee, instructor, course_description FROM courses WHERE 1";
             $result = $conn->query($sql);
-
+            $username = $_SESSION['username']; 
             if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
                 //echo "<p>".$row["course_name"]."</p>";
