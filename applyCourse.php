@@ -21,7 +21,7 @@ $course_id = $_GET['course'];
 		//echo "<script> window.location.assign('../index.html'); </script>";;
 		}
 		//echo "is that work?";
-		//echo "<script> window.location.assign('../index.html'); </script>";;
+		echo "<script> window.location.assign('myCourse.php'); </script>";;
 		$conn->close();
 		
 	//}
